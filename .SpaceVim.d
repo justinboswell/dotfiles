@@ -1,1 +1,0 @@
-/home/jboswell/.SpaceVim.d
