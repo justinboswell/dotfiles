@@ -4,6 +4,12 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  -
+    description: Install Oh My ZSH!
+    command: "[ -d ~/.oh-my-zsh ] || sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
+  -
+    description: Install rustup/rust
+    command: "[ -d ~/.rustup ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
 
 - clean: ['~']
 
@@ -12,3 +18,5 @@
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
 
+- create:
+    - ~/.local
