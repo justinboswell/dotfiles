@@ -1,0 +1,5 @@
+[user]
+	email = justin.boswell@gmail.com
+	name = Justin Boswell
+[pull]
+	rebase = true

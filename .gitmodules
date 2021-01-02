@@ -1,3 +1,7 @@
 [submodule "plug.kak"]
-	path = .config/kak/plugins/plug.kak
+	path = config/kak/plugins/plug.kak
 	url = https://github.com/robertmeta/plug.kak
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
