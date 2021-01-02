@@ -1,0 +1,14 @@
+# install LSP
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
+    lsp-enable-window
+}
+
+# plug.kak
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+# line numbers
+add-highlighter global/ number-lines
+
+set-option global tabstop 4
+set-option global indentwidth 4
