@@ -27,6 +27,7 @@
     expand_indent = true
     bootstrap_before = 'myspacevim#before'
     bootstrap_after = 'myspacevim#after'
+    project_rooter_outermost = false
 
 # Enable autocomplete layer
 [[layers]]
@@ -36,7 +37,7 @@ auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
 name = 'shell'
-default_position = 'top'
+default_position = 'bottom'
 default_height = 30
 
 [[layers]]
