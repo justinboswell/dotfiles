@@ -14,7 +14,7 @@
 - clean: ['~']
 
 - link:
-    ~/.config: config
+    ~/.config/kak: config/kak
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
 
