@@ -16,6 +16,7 @@
 - link:
     ~/.config/kak: config/kak
     ~/.gitconfig: gitconfig
+    ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
 
 - create:
