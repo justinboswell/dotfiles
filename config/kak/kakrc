@@ -1,14 +1,42 @@
 # install LSP
 eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp|java) %{
     lsp-enable-window
 }
 
 # plug.kak
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
+# fzf
+plug "andreyorst/fzf.kak"
+map global normal <c-p> ': fzf-mode<ret>'
+
 # line numbers
 add-highlighter global/ number-lines
 
+# tabs
 set-option global tabstop 4
 set-option global indentwidth 4
+# tab key does indent/unindent
+map global insert <tab> '<a-;><gt>'
+map global insert <s-tab> '<a-;><lt>'
+
+# use down/up arrows for completion
+hook global InsertCompletionShow .* %{
+    try %{
+        # this command temporarily removes cursors preceded by whitespace;
+        # if there are no cursors left, it raises an error, does not
+        # continue to execute the mapping commands, and the error is eaten
+        # by the `try` command so no warning appears.
+        execute-keys -draft 'h<a-K>\h<ret>'
+        map window insert <down> <c-n>
+        map window insert <up> <c-p>
+        hook -once -always window InsertCompletionHide .* %{
+            map window insert <down> <down>
+            map window insert <up> <up>
+        }
+    }
+}
+
+# theme
+colorscheme lucius
