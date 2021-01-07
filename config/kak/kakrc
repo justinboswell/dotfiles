@@ -1,11 +1,17 @@
+
+# plug.kak
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
 # install LSP
-eval %sh{kak-lsp --kakoune -s $kak_session}
+plug "kak-lsp/kak-lsp" do %{
+    cargo install --locked --force --path .
+}
+
 hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp|java) %{
     lsp-enable-window
 }
 
-# plug.kak
-source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
 
 # fzf
 plug "andreyorst/fzf.kak"

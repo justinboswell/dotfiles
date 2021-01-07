@@ -15,6 +15,7 @@
 
 - link:
     ~/.config/kak: config/kak
+    ~/.config/kak-lsp: config/kak-lsp
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
