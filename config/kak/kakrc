@@ -9,7 +9,16 @@ source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
 # fzf
 plug "andreyorst/fzf.kak"
-map global normal <c-p> ': fzf-mode<ret>'
+# Ctrl+P: find and open file in project
+map global normal <c-p> ': fzf-mode<ret>f'
+# F12: goto symbol
+map global normal <F12> ': fzf-mode<ret>g'
+# Ctrl+Shift+F: find in files
+map global normal <c-s-f> ': fzf-mode<ret>g'
+
+# alt-<left>/<right>: buffer navigation
+map global normal <a-left> ': buffer-previous<ret>'
+map global normal <a-right> ': buffer-next<ret>'
 
 # line numbers
 add-highlighter global/ number-lines
