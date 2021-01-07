@@ -1,0 +1,4 @@
+# only plug.kak matters, the rest will be installed locally:
+*
+!plug.kak
+!.gitignore
