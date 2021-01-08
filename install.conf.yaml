@@ -12,7 +12,10 @@
     command: "[ -d ~/.rustup ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
 
 - clean: ['~']
-
+- create:
+    - ~/.local
+    - ~/.config
+    
 - link:
     ~/.config/kak: config/kak
     ~/.config/kak-lsp: config/kak-lsp
@@ -20,5 +23,3 @@
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
 
-- create:
-    - ~/.local
