@@ -20,6 +20,8 @@
     ~/.config/kak: config/kak
     ~/.config/kak-lsp: config/kak-lsp
     ~/.gitconfig: gitconfig
+    ~/.SpaceVim.d/init.toml: SpaceVim.d/init.toml
+    ~/.SpaceVim.d/autoload: SpaceVim.d/autoload
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
 
