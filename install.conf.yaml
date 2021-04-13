@@ -11,6 +11,10 @@
     description: Install rustup/rust
     command: "[ -d ~/.rustup ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
 
+  -
+    description: Install SpaceVim
+    command: "[ -d ~/.SpaceVim ] || curl -sLf https://spacevim.org/install.sh | bash"
+
 - clean: ['~']
 - create:
     - ~/.local
