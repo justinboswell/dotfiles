@@ -19,6 +19,7 @@
 - create:
     - ~/.local
     - ~/.config
+    - ~/.SpaceVim.d
     
 - link:
     ~/.gitconfig: gitconfig
