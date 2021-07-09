@@ -9,19 +9,30 @@
     command: "[ -d ~/.oh-my-zsh ] || sh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
   -
     description: Install rustup/rust
-    command: "[ -d ~/.rustup ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+    command: "[ -d ~/.rustup ] || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-prompt"
+
+  -
+    description: Install SpaceVim
+    command: "[ -d ~/.SpaceVim ] || curl -sLf https://spacevim.org/install.sh | bash"
 
 - clean: ['~']
 - create:
     - ~/.local
     - ~/.config
+    - ~/.SpaceVim.d
     
 - link:
-    ~/.config/kak: config/kak
-    ~/.config/kak-lsp: config/kak-lsp
     ~/.gitconfig: gitconfig
-    ~/.SpaceVim.d/init.toml: SpaceVim.d/init.toml
-    ~/.SpaceVim.d/autoload: SpaceVim.d/autoload
-    ~/.tmux.conf: tmux.conf
-    ~/.zshrc: zshrc
+    ~/.SpaceVim.d/init.toml: 
+      path: SpaceVim.d/init.toml
+      force: true
+    ~/.SpaceVim.d/autoload: 
+      path: SpaceVim.d/autoload
+      force: true
+    ~/.tmux.conf: 
+      path: tmux.conf
+      force: true
+    ~/.zshrc: 
+      path: zshrc
+      force: true
 

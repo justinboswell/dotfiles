@@ -106,6 +106,7 @@ export PATH=$PATH:$HOME/.local/bin
 # iTerm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+# get rid of the unterminated line % marker
+unsetopt prompt_cr prompt_sp
